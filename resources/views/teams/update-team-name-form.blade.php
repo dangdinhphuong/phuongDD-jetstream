@@ -13,7 +13,11 @@
             <x-jet-label value="{{ __('Team Owner') }}" />
 
             <div class="flex items-center mt-2">
+                @if($team->owner->profile_photo_path==null || $team->owner->profile_photo_path=="")
                 <img class="w-12 h-12 rounded-full object-cover" src="{{ $team->owner->profile_photo_url }}" alt="{{ $team->owner->name }}">
+                @else
+                <img class="w-12 h-12 rounded-full object-cover" src="{{ asset("storage").'/'.$team->owner->profile_photo_path }}" alt="{{ $team->owner->name }}">
+                @endif
 
                 <div class="ml-4 leading-tight">
                     <div>{{ $team->owner->name }}</div>

@@ -1,4 +1,6 @@
-<x-app-layout>
+@extends('layouts.app')
+
+@section('content')
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Team Settings') }}
@@ -18,6 +20,9 @@
                     @livewire('teams.delete-team-form', ['team' => $team])
                 </div>
             @endif
+            <div class="mt-10 sm:mt-0">
+                @livewire('teams.delete-team-form', ['team' => $team])
+            </div>
         </div>
     </div>
-</x-app-layout>
+    @endsection
