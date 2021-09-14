@@ -8,19 +8,21 @@ use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
 use App\Http\Requests\User\CreateUserRequest;
+use App\Services\UserService as UserSvc;
 use Illuminate\Support\Facades\Lang;
 
 class UserController extends Controller
 {
-    private $user;
-    public function __construct(User $user)
+    private $userSvc;
+   
+    public function __construct( UserSvc $userSvc)
     {
-        $this->user = $user;
+        $this->userSvc = $userSvc;
     }
 
     public function index()
     {
-        $users = User::orderBy('email', 'asc')->paginate(10);
+        $users = $this->userSvc->show();
 
         return view('user', compact("users"));
     }
@@ -33,21 +35,11 @@ class UserController extends Controller
     {
         try {
             DB::beginTransaction();
-            $this->user->create([
-                'name' => $request->name,
-                'email' => $request->email,
-                'address' => $request->address,
-                'password' => Hash::make($request->phone),
-                'phone' => $request->phone,
-                'created_at' => date("Y-m-d h:i:s"),
-                'updated_at' => date("Y-m-d h:i:s"),
-                'deleted_at' => date("Y-m-d h:i:s"),
-            ]);
+            $this->userSvc->createUser($request);
             DB::commit();
 
             return redirect("/user")->with('status', 'Đăng ký thành công !');
-        }
-         catch (Exception $exception) {
+        } catch (Exception $exception) {
             DB::rollBack();
 
             return redirect("/adduser")->with('status', 'Đăng ký thất bại !');

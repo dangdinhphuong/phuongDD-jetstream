@@ -28,7 +28,6 @@ class UserSeed extends Seeder
                 'phone' => vnfaker()->fixedLineNumber($numbers = 12),
                 'created_at' => $faker->dateTime(),
                 'updated_at' => $faker->dateTime(),
-                'deleted_at' => $faker->dateTime(),
             ]);
         }
     }
