@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2e3bd1c6e5cc4d010268dd81c2a9c2f2",
+    "content-hash": "61b01cdb8fbdb5e9fd2966c3dc4b6c18",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -174,6 +174,68 @@
                 }
             ],
             "time": "2021-08-15T20:50:18+00:00"
+        },
+        {
+            "name": "buihuycuong/vnfaker",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/BuiHuyCuong/VNFaker.git",
+                "reference": "9427dc74f00d3734d1894e6069adc2bb43c8c026"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/BuiHuyCuong/VNFaker/zipball/9427dc74f00d3734d1894e6069adc2bb43c8c026",
+                "reference": "9427dc74f00d3734d1894e6069adc2bb43c8c026",
+                "shasum": ""
+            },
+            "default-branch": true,
+            "type": "package",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Buihuycuong\\Vnfaker\\VNFakerServiceProvider"
+                    ],
+                    "aliases": {
+                        "VNFaker": "Buihuycuong\\Vnfaker\\Facades\\VNFaker"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Buihuycuong\\Vnfaker\\": "src"
+                },
+                "files": [
+                    "src/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Bui Huy Cuong",
+                    "email": "buihuycuong1510@gmail.com"
+                }
+            ],
+            "description": "VNFaker is a Laravel package that generates fake data about name, city, address, phone,... in Viet Nam",
+            "homepage": "https://github.com/BuiHuyCuong/VNFaker",
+            "keywords": [
+                "Bui Huy Cuong",
+                "Richard Bui",
+                "data",
+                "laravel",
+                "laravel faker",
+                "php",
+                "viet nam",
+                "vnfaker"
+            ],
+            "support": {
+                "issues": "https://github.com/BuiHuyCuong/VNFaker/issues",
+                "source": "https://github.com/BuiHuyCuong/VNFaker/tree/master"
+            },
+            "time": "2018-12-27T06:51:21+00:00"
         },
         {
             "name": "dasprid/enum",
@@ -5737,16 +5799,16 @@
         },
         {
             "name": "facade/ignition",
-            "version": "2.12.1",
+            "version": "2.12.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/facade/ignition.git",
-                "reference": "567b0a4ab04367603e61729b0ca133fb7b4819db"
+                "reference": "74dcc32a2895a126d1e5f2cd3bbab499cac66db1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/facade/ignition/zipball/567b0a4ab04367603e61729b0ca133fb7b4819db",
-                "reference": "567b0a4ab04367603e61729b0ca133fb7b4819db",
+                "url": "https://api.github.com/repos/facade/ignition/zipball/74dcc32a2895a126d1e5f2cd3bbab499cac66db1",
+                "reference": "74dcc32a2895a126d1e5f2cd3bbab499cac66db1",
                 "shasum": ""
             },
             "require": {
@@ -5809,7 +5871,7 @@
                 "issues": "https://github.com/facade/ignition/issues",
                 "source": "https://github.com/facade/ignition"
             },
-            "time": "2021-09-10T07:19:07+00:00"
+            "time": "2021-08-24T09:53:54+00:00"
         },
         {
             "name": "facade/ignition-contracts",
@@ -6600,33 +6662,33 @@
         },
         {
             "name": "phpspec/prophecy",
-            "version": "1.14.0",
+            "version": "1.13.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpspec/prophecy.git",
-                "reference": "d86dfc2e2a3cd366cee475e52c6bb3bbc371aa0e"
+                "reference": "be1996ed8adc35c3fd795488a653f4b518be70ea"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/d86dfc2e2a3cd366cee475e52c6bb3bbc371aa0e",
-                "reference": "d86dfc2e2a3cd366cee475e52c6bb3bbc371aa0e",
+                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/be1996ed8adc35c3fd795488a653f4b518be70ea",
+                "reference": "be1996ed8adc35c3fd795488a653f4b518be70ea",
                 "shasum": ""
             },
             "require": {
                 "doctrine/instantiator": "^1.2",
-                "php": "^7.2 || ~8.0, <8.2",
+                "php": "^7.2 || ~8.0, <8.1",
                 "phpdocumentor/reflection-docblock": "^5.2",
                 "sebastian/comparator": "^3.0 || ^4.0",
                 "sebastian/recursion-context": "^3.0 || ^4.0"
             },
             "require-dev": {
-                "phpspec/phpspec": "^6.0 || ^7.0",
+                "phpspec/phpspec": "^6.0",
                 "phpunit/phpunit": "^8.0 || ^9.0"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.x-dev"
+                    "dev-master": "1.11.x-dev"
                 }
             },
             "autoload": {
@@ -6661,9 +6723,9 @@
             ],
             "support": {
                 "issues": "https://github.com/phpspec/prophecy/issues",
-                "source": "https://github.com/phpspec/prophecy/tree/1.14.0"
+                "source": "https://github.com/phpspec/prophecy/tree/1.13.0"
             },
-            "time": "2021-09-10T09:02:12+00:00"
+            "time": "2021-03-17T13:42:18+00:00"
         },
         {
             "name": "phpunit/php-code-coverage",
@@ -8104,7 +8166,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "buihuycuong/vnfaker": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
