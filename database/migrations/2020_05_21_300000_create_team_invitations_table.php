@@ -14,9 +14,8 @@ class CreateTeamInvitationsTable extends Migration
     public function up()
     {
         Schema::create('team_invitations', function (Blueprint $table) {
-            $table->increments('id');
-            $table->unsignedInteger('team_id');
-            $table->foreign('team_id')->references('id')->on('teams')->onDelete('cascade');
+            $table->id();
+            $table->foreignId('team_id')->constrained()->cascadeOnDelete();
             $table->string('email');
             $table->string('role')->nullable();
             $table->timestamps();
