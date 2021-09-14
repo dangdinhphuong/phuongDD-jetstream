@@ -55,12 +55,12 @@
         </form>
     </div>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    @if (Session::has('status'))
+    @if (Session::has('message'))
     <script>
         Swal.fire({
             icon: 'error',
             title: "Error!",
-            text: "{{ Session::get('status') }}",
+            text: "{{ Session::get('message') }}",
         })
     </script>
   @endif

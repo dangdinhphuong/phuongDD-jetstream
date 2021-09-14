@@ -46,11 +46,11 @@
 
     </style>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    @if (Session::has('status'))
+    @if (Session::has('message'))
         <script>
             swal({
                 title: "Good job!",
-                text: "{{ Session::get('status') }}",
+                text: "{{ Session::get('message') }}",
                 icon: "success",
                 button: "OK!",
             });

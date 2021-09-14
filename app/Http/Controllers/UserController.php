@@ -38,11 +38,11 @@ class UserController extends Controller
             $this->userSvc->createUser($request);
             DB::commit();
 
-            return redirect("/user")->with('status', 'Đăng ký thành công !');
+            return redirect("/user")->with('message', 'Đăng ký thành công !');
         } catch (Exception $exception) {
             DB::rollBack();
 
-            return redirect("/adduser")->with('status', 'Đăng ký thất bại !');
+            return redirect("/adduser")->with('message', 'Đăng ký thất bại !');
         }
     }
 }
